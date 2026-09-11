@@ -1,2 +1,4 @@
 # react-basics-labs
-Repository for React Labs
+
+
+Labs for Web App Development 2 Labs, Week 1-3.
