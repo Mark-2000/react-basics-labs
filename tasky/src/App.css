@@ -40,3 +40,13 @@ div {
   font-weight: bold;
   font-size: 1.2em; 
 }
+
+.description {
+  font-size: 1.0em;
+  font-style: italic;
+}
+
+.priority {
+  font-size: 1.0em;
+  font-weight: bold;
+}
