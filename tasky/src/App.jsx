@@ -12,8 +12,8 @@ function App() {
   const [ taskState, setTaskState ] = useState({
     tasks: [
       { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today", priority: "Medium", done: false },
-      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", priority: "High", done: false },
-      { id: 3, title: "Tidy up", description: "Clean the living room", deadline: "Today", priority: "Low", done: false }
+      { id: 2, title:"Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", priority: "High", done: false },
+      { id: 3, title:"Tidy up", description: "Clean the living room", deadline: "Today", priority: "Low", done: false }
     ]
   });
 
@@ -84,9 +84,9 @@ function App() {
           align="center"
           gutterBottom
           sx={{
-            backgroundColor: 'gray',
+            backgroundColor: 'lavender',
             textAlign: 'center',
-            color: 'white',
+            color: '#4B0082',
             padding: '20px',
             margin: '20px 0 40px 0',
             borderRadius: '4px'
@@ -103,7 +103,7 @@ function App() {
         container
         spacing={5}
         sx={{
-        justifyContent: "center"
+        phone: 12, tablet: 6, large: 4, display: 'flex', justifyContent: 'center', alignItems: 'center'
         }}
       >
       {taskState.tasks.map((task, index) => (
@@ -112,6 +112,7 @@ function App() {
         description={task.description}
         deadline={task.deadline}
         done={task.done}
+        priority={task.priority}
         key={task.id}
         markDone={() => doneHandler(index)}
         deleteTask={() => deleteHandler(index)}
@@ -131,7 +132,7 @@ function App() {
       }}
       >
       <Grid container sx={{
-        justifyContent: "center"
+        justifyContent: 'center'
       }}>
         <AddTaskForm
           submit={formSubmitHandler}

@@ -6,18 +6,24 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DoneIcon from '@mui/icons-material/Done';
+import Alert from '@mui/material/Alert';
 
 const Task = (props) => {
     
     return (
       <Grid
         key={props.id}
-        size={{ xs: 12, md: 4 }}
+        size={{ phone: 12, tablet: 6, large: 4, display: 'flex', justifyContent: 'center', alignItems: 'center'}}
       >
         <Card
           sx={{
-            backgroundColor: props.done ? 'lightgrey' : 'lightblue',
-            padding: '20px'
+            backgroundColor: props.done ? 'lightgrey' : 'lavender',
+            padding: '25px',
+            color: "indigo",
           }}
         >
           <CardHeader
@@ -45,6 +51,7 @@ const Task = (props) => {
                 variant="subtitle2"
                 color="text.primary"
               >
+                <AccessTimeIcon sx={{ mr: 1 }} />
                 Due: {props.deadline}
               </Typography>
             </Box>
@@ -55,8 +62,20 @@ const Task = (props) => {
               align="center"
               sx={{ fontStyle: 'italic' }}
             >
+              <EventNoteIcon sx={{ mr: 1 }} />
               {props.description}
             </Typography>
+
+            <Typography
+              component="p"
+              variant="subtitle2"
+              align="center"
+              padding="20px"
+              sx={{ backgroundColor: props.priority === 'High' ? 'red' : props.priority === 'Medium' ? 'orange' : 'yellow', fontWeight: 'bold', borderRadius: '4px', marginTop: '20px' }}
+            >
+              {props.priority} Priority
+            </Typography>
+
           </CardContent>
 
           <CardActions
@@ -70,15 +89,18 @@ const Task = (props) => {
               size="small"
               color="success"
               onClick={props.markDone}
+              startIcon={<DoneIcon />}
             >
               Done
             </Button>
-
+            
             <Button
               variant="contained"
               size="small"
               color="error"
               onClick={props.deleteTask}
+              startIcon={<DeleteIcon />}
+              
             >
               Delete
             </Button>

@@ -9,7 +9,7 @@ body {
   font-weight: bold;
 }
 
-input[type=text], input[type=date], select {
+/*input[type=text], input[type=date], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -38,5 +38,5 @@ form {
   text-align: left;
   width: 50%;
   margin: auto;
-}
+} */
 

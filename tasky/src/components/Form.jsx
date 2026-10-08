@@ -8,7 +8,7 @@ const AddTaskForm = (props) => {
     <Box
     component="form"
     sx={{
-        '& .MuiOutlinedInput-root': { m: 1, width: '30ch' },
+        '& .MuiOutlinedInput-root': { m: 1, width: '30ch', backgroundColor: 'lavender', borderRadius: '4px' },
     }}
     onSubmit={props.submit}
     >
@@ -22,6 +22,7 @@ const AddTaskForm = (props) => {
             onChange={(event) => props.change(event)}
         />
         </div>
+
         <div>
         <TextField
             required
@@ -32,6 +33,7 @@ const AddTaskForm = (props) => {
             onChange={(event) => props.change(event)}
         />
         </div>
+
         <div>
         <TextField
             name="description"
@@ -43,13 +45,14 @@ const AddTaskForm = (props) => {
             onChange={(event) => props.change(event)}
         />
         </div>
+
         <div>
         <Button
             type="submit"
             variant="contained"
             color="primary"
             sx={{
-            m: 1,
+            m: 1.5,
             p: 1,
             width: '95%'
             }}
